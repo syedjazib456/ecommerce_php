@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2024 at 11:07 AM
+-- Generation Time: Nov 07, 2024 at 01:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -31,16 +31,18 @@ CREATE TABLE `admin` (
   `adminid` int(11) NOT NULL,
   `adminname` varchar(50) NOT NULL,
   `adminemail` varchar(50) NOT NULL,
-  `adminpass` varchar(50) NOT NULL
+  `adminpass` varchar(50) NOT NULL,
+  `admin_img` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`adminid`, `adminname`, `adminemail`, `adminpass`) VALUES
-(1, 'Asif Khan', 'asif123@gmail.com', '1234567'),
-(2, 'Qasim Shah', 'qasim123@gmail.com', '1234567');
+INSERT INTO `admin` (`adminid`, `adminname`, `adminemail`, `adminpass`, `admin_img`) VALUES
+(1, 'Asif Khan', 'asif123@gmail.com', '1234567', 'user.png'),
+(2, 'Qasim Shah', 'qasim123@gmail.com', '1234567', 'user.png'),
+(3, 'Salman Afzal', 'salman123@gmail.com', '1234567', 'user.png');
 
 -- --------------------------------------------------------
 
@@ -82,11 +84,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `category_id`, `p_img`) VALUES
-(3, 'Addidas Bag', 'Nice Bag', '4500.00', 2, ''),
-(5, 'Samsungs', 'Best Product', '100000.00', 1, ''),
-(6, 'Samsung', 'Best Product', '100000.00', NULL, 'images.jfif'),
-(7, 'Addidas Bag', 'Nice Bag', '4000.00', NULL, '149071.png'),
-(8, 'Addidas Bag', 'Nice Bag', '4000.00', NULL, '149071.png');
+(6, 'Samsung', 'Best Product', '50000.00', NULL, 'js3.png'),
+(10, 'Redme ', 'Good Quality', '50000.00', NULL, 'redmi-9a-01.jpg');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +118,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -131,7 +130,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
